@@ -1,5 +1,5 @@
 """
-Name: (put your name here)
+Name: (Malia Lockhart)
 Peers: (add any collaborators)
 References: (anything you checked to solve this)
 """
@@ -23,6 +23,19 @@ def read_five_ints():
     "Error in read_five_ints: input integer outside of range".
     """
     for idx in range ( len(grades) ):
+        in_str = input("Give me the next grade in [0 to 10]:")
+        
+        if not in_str.isdigit():
+            print("Error in read_five_ints: input string is not for an integer")
+            exit()
+            
+        num = int(in_str)
+        
+        if num < 0 or num > 10:
+            print("Error in read_five ints: input integer outside of range")
+            exit()
+            
+        grades[idx] = num
         # for each idx in 0, 1,... 4 do:
         # check if the input is not a digit print error
         # convert to int
@@ -37,6 +50,27 @@ def read_five_ints():
 # Task 2:
 #  Complete the function "pick_averaging_method" below:
 def pick_averaging_method():
+    
+    option = input("Pick 'a' for mean, 'b' for median, 'c' for mode:")
+    
+    if option == "a":
+        print("picked: Mean")
+        avg = statistics.mean(grades)
+        return avg
+    
+    elif option == "b":
+        print("picked: Median")
+        avg = statistics.median(grades)
+        return avg
+    
+    elif option == "c":
+        print("picked: Mode")
+        avg = statistics.mode(grades)
+        return avg
+    
+    else:
+        print("Error in pick_averaging_method: incorrect option picked")
+        exit()
     """ returns an average depending on the user's selection
 
     Obtains an average using either mean, median or mode,
