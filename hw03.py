@@ -32,7 +32,7 @@ def read_five_ints():
         num = int(in_str)
         
         if num < 0 or num > 10:
-            print("Error in read_five ints: input integer outside of range")
+            print("Error in read_five_ints: input integer outside of range")
             exit()
             
         grades[idx] = num
@@ -58,12 +58,12 @@ def pick_averaging_method():
         avg = statistics.mean(grades)
         return avg
     
-    elif option == "b":
+    if option == "b":
         print("picked: Median")
         avg = statistics.median(grades)
         return avg
     
-    elif option == "c":
+    if option == "c":
         print("picked: Mode")
         avg = statistics.mode(grades)
         return avg
@@ -84,6 +84,20 @@ def pick_averaging_method():
 # Task 3:
 #  Complete the function "pick_visualization" below:
 def pick_visualization(average):
+    
+    option = input("Pick '1' for print average, or '2' for plot average: ")
+    
+    if option == "1":
+        print_list_and_average(average)
+        return
+    
+    if option == "2":
+        plot_grades(average)
+        return
+    
+    else:
+        print("Error in pick_visualization: incorrect option picked")
+        exit()
     """ prints the result in a format that depends on the user's selection
 
     Prints the numeric average or prints in a special way
