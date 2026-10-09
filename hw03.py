@@ -1,7 +1,7 @@
 """
 Name: (Malia Lockhart)
 Peers: (add any collaborators)
-References: (anything you checked to solve this)
+References: (Textbook, lectures, python documentation glossary)
 """
 
 # imported modules
