@@ -23,14 +23,15 @@ def read_five_ints():
     "Error in read_five_ints: input integer outside of range".
     """
     for idx in range ( len(grades) ):
+        #using index so I can fill each position in the grade list one at a time
         in_str = input("Give me the next grade in [0 to 10]:")
-        
+        #check if the input contains only digits before converting to an integer
         if not in_str.isdigit():
             print("Error in read_five_ints: input string is not for an integer")
             exit()
             
         num = int(in_str)
-        
+        #must be between 0 and 10
         if num < 0 or num > 10:
             print("Error in read_five_ints: input integer outside of range")
             exit()
@@ -52,7 +53,7 @@ def read_five_ints():
 def pick_averaging_method():
     
     option = input("Pick 'a' for mean, 'b' for median, 'c' for mode:")
-    
+    #users choice for each possible averaging method
     if option == "a":
         print("picked: Mean")
         avg = statistics.mean(grades)
@@ -84,7 +85,8 @@ def pick_averaging_method():
 # Task 3:
 #  Complete the function "pick_visualization" below:
 def pick_visualization(average):
-    
+    #users choice for how they want to see the average printed
+
     option = input("Pick '1' for print average, or '2' for plot average: ")
     
     if option == "1":
